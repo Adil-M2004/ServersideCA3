@@ -224,18 +224,29 @@ h2.section-title::after {
 }
 
 
-/* List Styles */
+/* Fixtures List Styling */
 ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
-li {
-    background-color: white;
-    margin-bottom: 0.5rem;
-    padding: 1rem;
-    border-radius: 0.25rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+ul li {
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+}
+
+ul li strong {
+    color: var(--primary-color);
+}e {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 table {
     width: 100%;
