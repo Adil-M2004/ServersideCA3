@@ -5,7 +5,10 @@ use App\Http\Controllers\FixtureController;
 use App\Http\Controllers\TableController;
 
 
-Route::get('/', [TeamController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
+
 Route::resource('teams', TeamController::class);
 Route::resource('players', PlayerController::class);
 Route::resource('fixtures', FixtureController::class);
