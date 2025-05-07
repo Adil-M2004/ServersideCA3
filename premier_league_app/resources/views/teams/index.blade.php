@@ -1,5 +1,5 @@
-@extends('layouts.app')
 
+@extends('layouts.app')
 @section('content')
 <h1>Premier League Teams</h1>
 <ul>

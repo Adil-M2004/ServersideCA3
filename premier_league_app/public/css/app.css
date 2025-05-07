@@ -1,0 +1,131 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom Premier League Theme */
+:root {
+    --primary-color: #37003c; /* Premier League purple */
+    --secondary-color: #ffcd00; /* Premier League yellow */
+    --text-color: #ffffff; /* White text */
+    --background-color: #f8f9fa; /* Light gray background */
+    --header-height: 80px;
+}
+
+/* Header Styling */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.hero a {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.hero a:hover {
+    background-color: #ffd700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table th,
+    table td {
+        font-size: 0.9rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
