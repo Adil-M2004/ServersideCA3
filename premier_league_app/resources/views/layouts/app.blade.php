@@ -12,6 +12,7 @@
             <a href="{{ route('home') }}">Home</a>
             <a href="{{ route('teams.index') }}">Teams</a>
             <a href="{{ route('fixtures.index') }}">Fixtures</a>
+            <a href="{{ route('table.index') }}">Table</a>
         </nav>
     </header>
     <main>
