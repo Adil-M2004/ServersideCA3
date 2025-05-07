@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,22 +7,27 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
     <header>
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Premier League</h1>
-            <nav>
-                <a href="{{ route('home') }}">Home</a>
-                <a href="{{ route('teams.index') }}">Teams</a>
-                <a href="{{ route('fixtures.index') }}">Fixtures</a>
-                <a href="{{ route('table.index') }}">Table</a>
-            </nav>
-        </div>
+        <h1>Premier League Hub</h1>
+        <nav>
+            <a href="{{ route('home') }}">Home</a>
+            <a href="{{ route('teams.index') }}">Teams</a>
+            <a href="{{ route('fixtures.index') }}">Fixtures</a>
+            <a href="{{ route('table.index') }}">Table</a>
+        </nav>
     </header>
-    <main class="container mx-auto py-8">
+
+    <!-- Main Content -->
+    <main class="container mx-auto pt-32 pb-8 px-6">
         @yield('content')
     </main>
-    <footer>
-        <p>&copy; {{ date('Y') }} Premier League. All rights reserved.</p>
+
+    <!-- Footer -->
+    <footer class="bg-purple-800 text-white py-6 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; {{ date('Y') }} Premier League. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
