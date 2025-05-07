@@ -1,14 +1,17 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\Team;
+use App\Models\Player;
 use Illuminate\Http\Request;
 
-class TeamController extends Controller
+class PlayerController extends Controller
 {
     public function index()
     {
-        $teams = Team::all();
-        return view('teams.index', compact('teams'));
+        // Fetch all players from the database
+        $players = Player::all();
+
+        // Pass the players to the view
+        return view('players.index', compact('players'));
     }
 }

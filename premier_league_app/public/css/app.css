@@ -49,6 +49,7 @@ header nav {
     gap: 15px; /* Add spacing between links */
 }
 
+/* Header Navigation Button Styling */
 header nav a {
     color: var(--text-color);
     text-decoration: none;
@@ -63,6 +64,20 @@ header nav a:hover {
     color: var(--primary-color);
 }
 
+/* Specific Styling for Players Button */
+header nav a.player-button {
+    background-color: var(--secondary-color); /* Highlight the Players button */
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header nav a.player-button:hover {
+    background-color: #ffd700;
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
 header h1 {
     font-size: 2rem;
     font-weight: bold;

@@ -110,3 +110,41 @@ VALUES
 (16, 17, '2024-08-25', 2, 2), -- Tottenham vs West Ham United
 (18, 19, '2024-08-26', 0, 3), -- Ipswich Town vs Leicester City
 (20, 1, '2024-08-26', 2, 3);  -- Southampton vs Liverpool
+
+CREATE TABLE IF NOT EXISTS players (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    position VARCHAR(50),
+    team_id INT NOT NULL,
+    FOREIGN KEY (team_id) REFERENCES teams(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS player_stats (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    player_id INT NOT NULL,
+    fixture_id INT NOT NULL,
+    goals INT DEFAULT 0,
+    assists INT DEFAULT 0,
+    possession_lost INT DEFAULT 0,
+    contact_tackles INT DEFAULT 0,
+    kickouts_won INT DEFAULT 0,
+    kickouts_lost INT DEFAULT 0,
+    minutes_played INT DEFAULT 0,
+    FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE CASCADE,
+    FOREIGN KEY (fixture_id) REFERENCES fixtures(id) ON DELETE CASCADE
+);
+INSERT INTO players (name, age, position, team_id)
+VALUES
+('Mohamed Salah', 31, 'Forward', 1),
+('Kevin De Bruyne', 33, 'Midfielder', 3),
+('Marcus Rashford', 27, 'Forward', 2),
+('Declan Rice', 26, 'Midfielder', 4),
+('Raheem Sterling', 30, 'Winger', 5);
+
+INSERT INTO player_stats (player_id, fixture_id, goals, assists, possession_lost, contact_tackles, kickouts_won, kickouts_lost, minutes_played)
+VALUES
+(1, 1, 2, 1, 3, 2, 0, 0, 90),
+(2, 2, 1, 2, 2, 1, 0, 0, 88),
+(3, 1, 0, 0, 5, 3, 0, 0, 90),
+(4, 2, 0, 1, 2, 4, 0, 0, 89),
+(5, 3, 1, 0, 1, 0, 0, 0, 75);

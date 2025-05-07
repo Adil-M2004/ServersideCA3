@@ -15,6 +15,7 @@
             <a href="{{ route('teams.index') }}">Teams</a>
             <a href="{{ route('fixtures.index') }}">Fixtures</a>
             <a href="{{ route('table.index') }}">Table</a>
+            <a href="{{ route('players.index') }}" class="player-button">Players</a> <!-- Added Players Button -->
         </nav>
     </header>
 
