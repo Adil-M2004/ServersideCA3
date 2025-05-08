@@ -9,6 +9,8 @@ Route::get('/fixtures/{fixture}/edit', [FixtureController::class, 'edit'])->name
 Route::put('/fixtures/{fixture}', [FixtureController::class, 'update'])->name('fixtures.update');
 Route::post('/teams', [TeamController::class, 'store'])->name('teams.store');
 Route::delete('/teams/{team}', [TeamController::class, 'destroy'])->name('teams.destroy');
+Route::post('/players', [PlayerController::class, 'store'])->name('players.store');
+Route::delete('/players/{player}', [PlayerController::class, 'destroy'])->name('players.destroy');
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
