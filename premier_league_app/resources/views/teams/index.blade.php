@@ -4,23 +4,25 @@
 <h1 class="text-4xl font-bold text-center text-purple-800 mb-8">Premier League Teams</h1>
 
 <!-- Add Team Form -->
-<form action="{{ route('teams.store') }}" method="POST" class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md mb-8">
-    @csrf
-    <h2 class="text-2xl font-bold mb-4">Add a New Team</h2>
-    <div class="mb-4">
-        <label for="name" class="block text-gray-700 font-bold mb-2">Team Name</label>
-        <input type="text" name="name" id="name" class="w-full border-gray-300 rounded-lg">
-    </div>
-    <div class="mb-4">
-        <label for="stadium" class="block text-gray-700 font-bold mb-2">Stadium</label>
-        <input type="text" name="stadium" id="stadium" class="w-full border-gray-300 rounded-lg">
-    </div>
-    <div class="mb-4">
-        <label for="city" class="block text-gray-700 font-bold mb-2">City</label>
-        <input type="text" name="city" id="city" class="w-full border-gray-300 rounded-lg">
-    </div>
-    <button type="submit" class="bg-purple-800 text-white px-4 py-2 rounded-lg">Add Team</button>
-</form>
+<div class="add-team-form">
+    <h2>Add a New Team</h2>
+    <form action="{{ route('teams.store') }}" method="POST">
+        @csrf
+        <div>
+            <label for="name">Team Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter team name">
+        </div>
+        <div>
+            <label for="stadium">Stadium</label>
+            <input type="text" name="stadium" id="stadium" placeholder="Enter stadium name">
+        </div>
+        <div>
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" placeholder="Enter city name">
+        </div>
+        <button type="submit">Add Team</button>
+    </form>
+</div>
 
 <!-- Teams List -->
 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -34,7 +36,9 @@
         <form action="{{ route('teams.destroy', $team->id) }}" method="POST" class="ml-auto">
             @csrf
             @method('DELETE')
-            <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded-lg">Delete</button>
+            <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-500 transition duration-300">
+                Delete
+            </button>
         </form>
     </li>
     @endforeach
